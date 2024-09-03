@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiaryTech.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d0255ca308e54c938feefff9bdfb4f12095a2b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiaryTech.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiaryTech.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
