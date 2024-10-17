@@ -1,0 +1,12 @@
+E:\Projects\DiaryTech\DiaryTech.Domain\bin\Debug\net8.0\DiaryTech.Domain.deps.json
+E:\Projects\DiaryTech\DiaryTech.Domain\bin\Debug\net8.0\DiaryTech.Domain.dll
+E:\Projects\DiaryTech\DiaryTech.Domain\bin\Debug\net8.0\DiaryTech.Domain.pdb
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.AssemblyInfoInputs.cache
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.AssemblyInfo.cs
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.csproj.CoreCompileInputs.cache
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.sourcelink.json
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.dll
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\refint\DiaryTech.Domain.dll
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\DiaryTech.Domain.pdb
+E:\Projects\DiaryTech\DiaryTech.Domain\obj\Debug\net8.0\ref\DiaryTech.Domain.dll
