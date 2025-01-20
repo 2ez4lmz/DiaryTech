@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>DiaryTech.WebApi</RootNamespace>
         <UserSecretsId>33f84f16-9b20-41c7-a70b-a3db179f720b</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

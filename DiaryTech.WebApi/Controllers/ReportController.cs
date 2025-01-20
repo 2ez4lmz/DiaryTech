@@ -20,6 +20,21 @@ public class ReportController : ControllerBase
         _reportService = reportService;
     }
 
+    /// <summary>
+    /// Получение отчётов пользователя
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "id": "1",
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="200">Если отчёты были найдены</response>
+    /// <response code="400">Если отчёты не были найдены</response>
     [HttpGet("reports/{userId}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -34,6 +49,21 @@ public class ReportController : ControllerBase
         return BadRequest(response);
     }
 
+    /// <summary>
+    /// Получение отчёта с указанием идентификатора
+    /// </summary>
+    /// <param name="id"></param>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     GET
+    ///     {
+    ///        "id": "1",
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="200">Если отчёт был найден</response>
+    /// <response code="400">Если отчёт не был найден</response>
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -48,6 +78,21 @@ public class ReportController : ControllerBase
         return BadRequest(response);
     }
 
+    /// <summary>
+    /// Удаление отчёта с указанием идентификатора
+    /// </summary>
+    /// <param name="id"></param>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     DELETE
+    ///     {
+    ///        "id": "1",
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="200">Если отчёт удалился</response>
+    /// <response code="400">Если отчёт не был удален</response>
     [HttpDelete]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -62,6 +107,23 @@ public class ReportController : ControllerBase
         return BadRequest(response);
     }
 
+    /// <summary>
+    /// Создание отчёта
+    /// </summary>
+    /// <param name="dto"></param>
+    /// <remarks>
+    /// Request for create report:
+    ///
+    ///     POST
+    ///     {
+    ///        "name": "Report #1",
+    ///        "description": "Test report",
+    ///        "userId": 1
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="200">Если отчёт создался</response>
+    /// <response code="400">Если отчёт не был создан</response>
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -76,6 +138,23 @@ public class ReportController : ControllerBase
         return BadRequest(response);
     }
     
+    /// <summary>
+    /// Обновление отчёта с указанием основных свойств
+    /// </summary>
+    /// <param name="dto"></param>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     PUT
+    ///     {
+    ///        "id": 1
+    ///        "name": "Report #2,
+    ///        "description": "Test report2",
+    ///     }
+    ///
+    /// </remarks>
+    /// <response code="200">Если отчёт обновился</response>
+    /// <response code="400">Если отчёт не был обновлен</response>
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
