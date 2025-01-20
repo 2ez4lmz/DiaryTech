@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DiaryTech.Domain.Dto.Report;
 using DiaryTech.Domain.Interfaces.Services;
 using DiaryTech.Domain.Result;
@@ -6,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiaryTech.WebApi.Controllers;
 
-//[Authorize]
+[Authorize]
 [ApiController]
-[Route("api/v1/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class ReportController : ControllerBase
 {
     private readonly IReportService _reportService;
