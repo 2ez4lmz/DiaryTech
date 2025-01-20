@@ -20,13 +20,18 @@ public class ReportService : IReportService
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
 
-    public ReportService(IBaseRepository<Report> reportRepository, IBaseRepository<User> userRepository,
-        ILogger logger, IReportValidator reportValidator)
+    public ReportService(
+        IBaseRepository<Report> reportRepository, 
+        IBaseRepository<User> userRepository,
+        ILogger logger, 
+        IReportValidator reportValidator,
+        IMapper mapper)
     {
         _reportRepository = reportRepository;
         _userRepository = userRepository;
         _reportValidator = reportValidator;
-
+        
+        _mapper = mapper;
         _logger = logger;
     }
     
@@ -130,13 +135,13 @@ public class ReportService : IReportService
                 Description = dto.Description,
                 UserId = user.Id
             };
+            
             await _reportRepository.CreateAsync(report);
             return new BaseResult<ReportDto>()
             {
                 Data = _mapper.Map<ReportDto>(report)
             };
         }
-        
         catch (Exception ex)
         {
             _logger.Error(ex, ex.Message);
@@ -147,7 +152,6 @@ public class ReportService : IReportService
                 ErrorCode = (int)ErrorCodes.InternalServerError
             };
         }
-        throw new NotImplementedException();
     }
 
     /// <inheritdoc/>
@@ -218,6 +222,5 @@ public class ReportService : IReportService
                 ErrorCode = (int)ErrorCodes.InternalServerError
             };
         }
-        throw new NotImplementedException();
     }
 }
