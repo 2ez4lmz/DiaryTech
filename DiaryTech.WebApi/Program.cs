@@ -1,11 +1,16 @@
 using DiaryTech.Application.DependencyInjection;
 using DiaryTech.DAL.DependencyInjection;
+using DiaryTech.Domain.Settings;
 using DiaryTech.WebApi;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(JwtSettings.DefaultSection));
+
 builder.Services.AddControllers();
+
+builder.Services.AddAuthenticationAndAuthorization(builder);
 builder.Services.AddSwagger();
 
 builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
