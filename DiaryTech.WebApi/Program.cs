@@ -2,6 +2,8 @@ using DiaryTech.Application.DependencyInjection;
 using DiaryTech.DAL.DependencyInjection;
 using DiaryTech.Domain.Settings;
 using DiaryTech.WebApi;
+using DiaryTech.WebApi.Middlewares;
+using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,8 @@ builder.Services.AddApplication();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -30,6 +34,8 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
+
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
