@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiaryTech.WebApi.Controllers;
 
+[ApiController]
 public class TokenController : Controller
 {
     private readonly ITokenService _tokenService;
@@ -15,6 +16,7 @@ public class TokenController : Controller
     }
 
     [HttpPost]
+    [Route("refresh")]
     public async Task<ActionResult<BaseResult<TokenDto>>> RefreshToken([FromBody] TokenDto tokenDto)
     {
         var response = await _tokenService.RefreshToken(tokenDto);

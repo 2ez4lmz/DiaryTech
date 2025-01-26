@@ -4,7 +4,8 @@ using DiaryTech.Domain.Result;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiaryTech.WebApi.Controllers;
-
+ 
+[ApiController]
 public class AuthController : Controller
 {
     private readonly IAuthService _authService;

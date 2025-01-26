@@ -33,6 +33,7 @@ public class TokenService : ITokenService
         _audience = options.Value.Audience;
     }
     
+    
     public string GenerateAccessToken(IEnumerable<Claim> claims)
     {
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtKey));
@@ -64,7 +65,9 @@ public class TokenService : ITokenService
             ValidateIssuer = true,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtKey)),
-            ValidateLifetime = true
+            ValidateLifetime = true,
+            ValidAudience = _audience,
+            ValidIssuer = _issuer
         };
         var tokenHandler = new JwtSecurityTokenHandler();
         var claimsPrincipal = tokenHandler.ValidateToken(accessToken, tokenValidationParameters, out var securityToken);
