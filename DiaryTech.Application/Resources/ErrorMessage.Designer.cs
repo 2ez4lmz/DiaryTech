@@ -69,6 +69,24 @@ namespace DiaryTech.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Невалидный запрос клиента.
+        /// </summary>
+        internal static string InvalidClientRequest {
+            get {
+                return ResourceManager.GetString("InvalidClientRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Невалидный токен.
+        /// </summary>
+        internal static string InvalidToken {
+            get {
+                return ResourceManager.GetString("InvalidToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Неверный пароль.
         /// </summary>
         internal static string PasswordIsWrong {
